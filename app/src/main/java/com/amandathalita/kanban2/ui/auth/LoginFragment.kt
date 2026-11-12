@@ -7,18 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.amandathalita.kanban2.R
+import com.amandathalita.kanban2.databinding.FragmentLoginBinding
 import com.amandathalita.kanban2.databinding.FragmentSplashBinding
 
 class LoginFragment : Fragment() {
 
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding= FragmentSplashBinding.inflate(inflater, container, false)
+        _binding= FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,6 +29,10 @@ class LoginFragment : Fragment() {
         initListener()
     }
     private fun initListener(){
+        binding.botaoLogin.setOnClickListener{
+            findNavController().navigate(R.id.action_global_homeFragment)
+        }
+
         binding.btnRegister.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
