@@ -6,10 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.amandathalita.kanban2.R
+import com.amandathalita.kanban2.databinding.FragmentRegisterBinding
 import com.amandathalita.kanban2.databinding.FragmentSplashBinding
 
 class RegisterFragment : Fragment() {
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +18,7 @@ class RegisterFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding= FragmentSplashBinding.inflate(inflater, container, false)
+        _binding= FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
             }
 
